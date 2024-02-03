@@ -27,10 +27,13 @@ class OnboardPageState extends State<OnboardPage> {
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    final widthScreen = MediaQuery.of(context).size.width;
-    final heighScreen = MediaQuery.of(context).size.height;
-    final scale = mockupWidth / widthScreen;
-    final textScaleFactor = widthScreen / mockupWidth;
+    /**
+     * final widthScreen = MediaQuery.of(context).size.width;
+    * final heighScreen = MediaQuery.of(context).size.height;
+    * final scale = mockupWidth / widthScreen;
+    * final textScaleFactor = widthScreen / mockupWidth;
+     */
+
     return Scaffold(
       backgroundColor: grayBackgroundColorOnboard,
       body: SafeArea(
@@ -40,17 +43,33 @@ class OnboardPageState extends State<OnboardPage> {
             Expanded(
               child: Container(
                 margin: EdgeInsets.only(
-                  top: 40,
+                  // top: 4.75 *
+                  //     SizeConfig
+                  //         .heightMultiplier!, //disini heighnya adlaah 8.44 dimana 8.44* 4.75 kruang lebih 40
+                  top: SizeConfig.calHeightMultiplier(40),
                 ),
                 child: CarouselSlider(
                   items: [
-                    Image(image: AssetImage(imageOnboard1)),
-                    Image(image: AssetImage(imageOnboard2)),
-                    Image(image: AssetImage(imageOnboard3)),
+                    Image(
+                      image: AssetImage(
+                        imageOnboard1,
+                      ),
+                      fit: BoxFit.fill,
+                    ),
+                    Image(
+                      image: AssetImage(imageOnboard2),
+                      fit: BoxFit.fill,
+                    ),
+                    Image(
+                      image: AssetImage(imageOnboard3),
+                      fit: BoxFit.fill,
+                    ),
                   ],
                   options: CarouselOptions(
                     autoPlay: false,
-                    height: 331,
+                    // height:
+                    //     39 * SizeConfig.heightMultiplier!, //39* 8,44 adalah 331
+                    height: SizeConfig.calHeightMultiplier(320),
                     viewportFraction: 1,
                     initialPage: currentIndex,
                     enableInfiniteScroll: false,
@@ -79,7 +98,8 @@ class OnboardPageState extends State<OnboardPage> {
     return Flexible(
       child: Container(
         width: double.infinity,
-        height: 294,
+        // height: 34.75 * SizeConfig.heightMultiplier!,
+        height: SizeConfig.calHeightMultiplier(280),
         margin: EdgeInsets.symmetric(horizontal: 16),
         padding: EdgeInsets.all(24),
         decoration: BoxDecoration(
@@ -90,24 +110,24 @@ class OnboardPageState extends State<OnboardPage> {
           children: [
             Text(
               title[currentIndex],
-              textScaler: TextScaler.linear(
-                  MediaQuery.of(context).size.width / mockupWidth),
-              style: const TextStyle(
-                fontSize: 20,
+              // textScaler: TextScaler.linear(
+              //     MediaQuery.of(context).size.width / mockupWidth),
+              style: TextStyle(
+                fontSize: SizeConfig.calMultiplierText(20),
                 color: tittleColorFont,
                 fontWeight: FontWeight.w600,
               ),
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: 26,
+              height: SizeConfig.calHeightMultiplier(26),
             ),
             Text(
               subtitle[currentIndex],
-              textScaler: TextScaler.linear(
-                  MediaQuery.of(context).size.width / mockupWidth),
-              style: const TextStyle(
-                fontSize: 16,
+              // textScaler: TextScaler.linear(
+              //     MediaQuery.of(context).size.width / mockupWidth),
+              style: TextStyle(
+                fontSize: SizeConfig.calMultiplierText(16),
                 color: secoundaryColorFont,
                 fontWeight: FontWeight.w400,
               ),
@@ -188,7 +208,7 @@ class OnboardPageState extends State<OnboardPage> {
                             'Sign in',
                             style: TextStyle(
                               color: btnSecoundryColor,
-                              fontSize: 16,
+                              fontSize: SizeConfig.calMultiplierText(16),
                               fontWeight: FontWeight.w600,
                             ),
                           ),

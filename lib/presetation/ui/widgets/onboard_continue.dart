@@ -19,8 +19,8 @@ class OnboardContinue extends StatelessWidget {
       ),
       onPressed: onPressed,
       child: Text(
-        textScaler:
-            TextScaler.linear(MediaQuery.of(context).size.width / mockupWidth),
+        // textScaler:
+        //     TextScaler.linear(MediaQuery.of(context).size.width / mockupWidth),
         title,
         style: TextStyle(
           color: whiteColor,
