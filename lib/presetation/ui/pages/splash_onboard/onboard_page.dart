@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:project_bank_sha/config/common/image_assets.dart';
 import 'package:project_bank_sha/config/common/screen.dart';
 import 'package:project_bank_sha/config/theme/theme.dart';
-import 'package:project_bank_sha/presetation/ui/widgets/onboard_continue.dart';
+import 'package:project_bank_sha/presetation/ui/widgets/btn_primary.dart';
 
 class OnboardPage extends StatefulWidget {
   const OnboardPage({super.key});
@@ -39,14 +39,16 @@ class OnboardPageState extends State<OnboardPage> {
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.max,
           children: [
             Expanded(
               child: Container(
+                // decoration: BoxDecoration(color: Colors.amber),
                 margin: EdgeInsets.only(
                   // top: 4.75 *
                   //     SizeConfig
                   //         .heightMultiplier!, //disini heighnya adlaah 8.44 dimana 8.44* 4.75 kruang lebih 40
-                  top: SizeConfig.calHeightMultiplier(40),
+                  top: SizeConfig.calHeightMultiplier(100),
                 ),
                 child: CarouselSlider(
                   items: [
@@ -183,7 +185,7 @@ class OnboardPageState extends State<OnboardPage> {
                         ),
                       ),
                       Expanded(
-                        child: OnboardContinue(
+                        child: BtnPrimary(
                           title: 'Continue',
                           onPressed: () {
                             carouselController
@@ -197,7 +199,7 @@ class OnboardPageState extends State<OnboardPage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        OnboardContinue(
+                        BtnPrimary(
                           title: 'Get Started',
                           onPressed: () {},
                         ),
@@ -207,7 +209,7 @@ class OnboardPageState extends State<OnboardPage> {
                           child: Text(
                             'Sign in',
                             style: TextStyle(
-                              color: btnSecoundryColor,
+                              color: signInAuth,
                               fontSize: SizeConfig.calMultiplierText(16),
                               fontWeight: FontWeight.w600,
                             ),

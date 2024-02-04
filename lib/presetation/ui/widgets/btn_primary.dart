@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:project_bank_sha/config/common/screen.dart';
 import 'package:project_bank_sha/config/theme/theme.dart';
 
-class OnboardContinue extends StatelessWidget {
+class BtnPrimary extends StatelessWidget {
   VoidCallback
       onPressed; //! kita bisa mengparsing function void menggunakan tipedata VoidCallback
   String title;
-  OnboardContinue({super.key, required this.onPressed, required this.title});
+  BtnPrimary({super.key, required this.onPressed, required this.title});
 
   @override
   Widget build(BuildContext context) {

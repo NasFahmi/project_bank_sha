@@ -11,3 +11,7 @@ const Color blueColorCarousel = Color(0xff53C1F9);
 const Color grayColorCarousel = Color(0xffF1F1F9);
 const Color btnPrimaryColor = Color(0xff5142E6);
 const Color btnSecoundryColor = Color(0xff696B76);
+const Color strokeTextFieldColor = Color(0xffEFEEF1);
+const Color strokeTextFieldColorError = Color(0xffFF1E39);
+const Color strokeTextFiledColorFocused = Color(0xff3783FB);
+const Color signInAuth = Color(0xff696B76);
