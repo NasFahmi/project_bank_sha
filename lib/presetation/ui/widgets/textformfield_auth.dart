@@ -25,9 +25,9 @@ class TextFormFieldAuth extends StatelessWidget {
         return null;
       },
       controller: controller,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       keyboardType: keyboardType,
       obscureText: obscureText,
-      autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
         suffixIcon: suffix,
         contentPadding: EdgeInsets.all(12),

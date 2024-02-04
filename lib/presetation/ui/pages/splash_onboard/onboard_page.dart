@@ -201,11 +201,15 @@ class OnboardPageState extends State<OnboardPage> {
                       children: [
                         BtnPrimary(
                           title: 'Get Started',
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).pushNamed("/register");
+                          },
                         ),
                         SizedBox(height: 20),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.of(context).pushNamed("/sign-in");
+                          },
                           child: Text(
                             'Sign in',
                             style: TextStyle(

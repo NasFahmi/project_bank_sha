@@ -19,7 +19,7 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController passwordController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  bool isObscurePassword = false;
+  bool isObscurePassword = true;
 
   void toogleEye() {
     setState(() {
@@ -40,8 +40,10 @@ class _RegisterPageState extends State<RegisterPage> {
             Container(
               width: SizeConfig.calWidthMultiplier(155),
               height: SizeConfig.calWidthMultiplier(55),
-              margin: EdgeInsets.symmetric(
-                  vertical: SizeConfig.calHeightMultiplier(100)),
+              margin: EdgeInsets.only(
+                bottom: SizeConfig.calHeightMultiplier(100),
+                top: SizeConfig.calHeightMultiplier(80),
+              ),
               decoration: BoxDecoration(
                 image: DecorationImage(image: AssetImage(logoBlackkAssets)),
               ),
@@ -61,7 +63,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   EdgeInsets.only(bottom: SizeConfig.calHeightMultiplier(58)),
               child: Center(
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).pushNamed('/sign-in');
+                  },
                   child: Text(
                     'Sign in',
                     style: TextStyle(
