@@ -1,0 +1,9 @@
+const String routeInitial = '/';
+const String routeOnboard = '/onboard';
+const String routeLogin = '/login';
+const String routeLoginPin = '/login-pin';
+const String routeRegister = '/login';
+const String routeRegisterProfile = '/register-profile';
+const String routeRegisterVerify = '/register-verify';
+const String routeRegisterPin = '/register-pin';
+const String routeRegisterSuccess = '/register-success';

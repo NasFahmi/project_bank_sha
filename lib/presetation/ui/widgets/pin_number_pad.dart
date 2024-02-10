@@ -4,8 +4,8 @@ import 'package:project_bank_sha/config/common/screen.dart';
 import 'package:project_bank_sha/config/theme/theme.dart';
 
 class PinNumberPad extends StatelessWidget {
-  int n;
-  VoidCallback onTap;
+  final int n;
+  final VoidCallback onTap;
   bool isDelete = false;
   PinNumberPad(
       {super.key,

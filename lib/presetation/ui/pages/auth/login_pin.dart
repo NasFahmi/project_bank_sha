@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:project_bank_sha/config/common/screen.dart';
-import 'package:project_bank_sha/config/routes/Route.dart';
 import 'package:project_bank_sha/config/theme/theme.dart';
-import 'package:project_bank_sha/presetation/ui/widgets/btn_primary.dart';
 import 'package:project_bank_sha/presetation/ui/widgets/pin_code_field.dart';
 import 'package:project_bank_sha/presetation/ui/widgets/pin_number_pad.dart';
 
-class RegisterPinPage extends StatefulWidget {
-  const RegisterPinPage({super.key});
+class LoginPinPage extends StatefulWidget {
+  const LoginPinPage({super.key});
 
   @override
-  State<RegisterPinPage> createState() => _RegisterPinPageState();
+  State<LoginPinPage> createState() => _LoginPinPageState();
 }
 
-class _RegisterPinPageState extends State<RegisterPinPage> {
+class _LoginPinPageState extends State<LoginPinPage> {
   List<String> currentPin = ['', '', '', '', '', ''];
   int pinIndex = 0;
   TextEditingController pinOneController = TextEditingController();
@@ -36,7 +34,7 @@ class _RegisterPinPageState extends State<RegisterPinPage> {
                 height: SizeConfig.calHeightMultiplier(40),
               ),
               Text(
-                'Create Your PIN',
+                'Enter Your PIN',
                 style: TextStyle(
                   fontSize: SizeConfig.calMultiplierText(20),
                   fontWeight: FontWeight.w600,
@@ -55,15 +53,6 @@ class _RegisterPinPageState extends State<RegisterPinPage> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     KeyboardPinPad(),
-                    Flexible(
-                      flex: 1,
-                      child: BtnPrimary(
-                        onPressed: () {
-                          Navigator.of(context).pushNamed(routeRegisterSuccess);
-                        },
-                        title: 'Continue',
-                      ),
-                    ),
                   ],
                 ),
               ),

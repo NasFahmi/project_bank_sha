@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:project_bank_sha/config/common/image_assets.dart';
 import 'package:project_bank_sha/config/common/screen.dart';
+import 'package:project_bank_sha/config/routes/Route.dart';
 import 'package:project_bank_sha/config/theme/theme.dart';
 import 'package:project_bank_sha/presetation/ui/pages/auth/register_profile.dart';
 import 'package:project_bank_sha/presetation/ui/widgets/btn_primary.dart';
@@ -53,7 +54,7 @@ class _RegisterVerifyPageState extends State<RegisterVerifyPage> {
               child: Center(
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.of(context).pushNamed('/register-pin');
+                    Navigator.of(context).pushNamed(routeRegisterPin);
                   },
                   child: Text(
                     'Skip for Now',
@@ -179,7 +180,7 @@ class _RegisterVerifyPageState extends State<RegisterVerifyPage> {
           BtnPrimary(
             title: 'Continue',
             onPressed: () {
-              Navigator.of(context).pushNamed('/register-pin');
+              Navigator.of(context).pushNamed(routeRegisterPin);
             },
           )
         ],

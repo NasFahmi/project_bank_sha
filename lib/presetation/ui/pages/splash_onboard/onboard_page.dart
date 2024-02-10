@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:project_bank_sha/config/common/image_assets.dart';
 import 'package:project_bank_sha/config/common/screen.dart';
+import 'package:project_bank_sha/config/routes/Route.dart';
 import 'package:project_bank_sha/config/theme/theme.dart';
 import 'package:project_bank_sha/presetation/ui/widgets/btn_primary.dart';
 
@@ -202,13 +203,13 @@ class OnboardPageState extends State<OnboardPage> {
                         BtnPrimary(
                           title: 'Get Started',
                           onPressed: () {
-                            Navigator.of(context).pushNamed("/register");
+                            Navigator.of(context).pushNamed(routeRegister);
                           },
                         ),
                         SizedBox(height: 20),
                         GestureDetector(
                           onTap: () {
-                            Navigator.of(context).pushNamed("/sign-in");
+                            Navigator.of(context).pushNamed(routeLogin);
                           },
                           child: Text(
                             'Sign in',

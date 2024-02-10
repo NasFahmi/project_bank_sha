@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // Import the services.dart package
 import 'package:project_bank_sha/config/common/screen.dart';
+import 'package:project_bank_sha/config/routes/Route.dart';
 import 'package:project_bank_sha/config/routes/Routes.dart';
 import 'package:project_bank_sha/presetation/ui/pages/auth/login.dart';
 import 'package:project_bank_sha/presetation/ui/pages/auth/register.dart';
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
               locale: DevicePreview.locale(context),
               builder: DevicePreview.appBuilder,
               debugShowCheckedModeBanner: false,
-              initialRoute: '/',
+              initialRoute: routeInitial,
               onGenerateRoute: Routes.onRoute,
             );
           },

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:project_bank_sha/config/common/image_assets.dart';
 import 'package:project_bank_sha/config/common/screen.dart';
+import 'package:project_bank_sha/config/routes/Route.dart';
 import 'package:project_bank_sha/config/theme/theme.dart';
 import 'package:project_bank_sha/presetation/helper/image_helper.dart';
 import 'package:project_bank_sha/presetation/ui/widgets/btn_primary.dart';
@@ -163,7 +164,7 @@ class _RegisterProfilePageState extends State<RegisterProfilePage> {
           BtnPrimary(
             title: 'Continue',
             onPressed: () {
-              Navigator.of(context).pushNamed('/register-verify');
+              Navigator.of(context).pushNamed(routeRegisterVerify);
             },
           )
         ],

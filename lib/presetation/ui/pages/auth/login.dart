@@ -2,6 +2,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:project_bank_sha/config/common/image_assets.dart';
 import 'package:project_bank_sha/config/common/screen.dart';
+import 'package:project_bank_sha/config/routes/Route.dart';
 import 'package:project_bank_sha/config/theme/theme.dart';
 import 'package:project_bank_sha/presetation/ui/widgets/btn_primary.dart';
 import 'package:project_bank_sha/presetation/ui/widgets/textformfield_auth.dart';
@@ -56,14 +57,14 @@ class _LoginPageState extends State<LoginPage> {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            formRegister(),
+            formLogin(),
             Padding(
               padding:
                   EdgeInsets.only(bottom: SizeConfig.calHeightMultiplier(58)),
               child: Center(
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.of(context).pushNamed('/register');
+                    Navigator.of(context).pushNamed(routeRegister);
                   },
                   child: Text(
                     'Create New Account',
@@ -82,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Container formRegister() {
+  Container formLogin() {
     return Container(
       padding: EdgeInsets.symmetric(
           vertical: SizeConfig.calHeightMultiplier(22),

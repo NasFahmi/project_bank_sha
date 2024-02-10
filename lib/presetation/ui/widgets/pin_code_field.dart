@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:project_bank_sha/config/common/screen.dart';
 import 'package:project_bank_sha/config/theme/theme.dart';

@@ -2,6 +2,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:project_bank_sha/config/common/image_assets.dart';
 import 'package:project_bank_sha/config/common/screen.dart';
+import 'package:project_bank_sha/config/routes/Route.dart';
 import 'package:project_bank_sha/config/theme/theme.dart';
 import 'package:project_bank_sha/presetation/ui/widgets/btn_primary.dart';
 import 'package:project_bank_sha/presetation/ui/widgets/textformfield_auth.dart';
@@ -64,7 +65,7 @@ class _RegisterPageState extends State<RegisterPage> {
               child: Center(
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.of(context).pushNamed('/sign-in');
+                    Navigator.of(context).pushNamed(routeLogin);
                   },
                   child: Text(
                     'Sign in',
@@ -175,7 +176,7 @@ class _RegisterPageState extends State<RegisterPage> {
             BtnPrimary(
               title: 'Continue',
               onPressed: () {
-                Navigator.of(context).pushNamed('/register-profile');
+                Navigator.of(context).pushNamed(routeRegisterProfile);
               },
             )
           ],

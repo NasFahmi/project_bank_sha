@@ -3,9 +3,9 @@ import 'package:project_bank_sha/config/common/screen.dart';
 import 'package:project_bank_sha/config/theme/theme.dart';
 
 class BtnPrimary extends StatelessWidget {
-  VoidCallback
+  final VoidCallback
       onPressed; //! kita bisa mengparsing function void menggunakan tipedata VoidCallback
-  String title;
+  final String title;
   BtnPrimary({super.key, required this.onPressed, required this.title});
 
   @override
@@ -13,7 +13,9 @@ class BtnPrimary extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         minimumSize: Size(double.infinity, 50),
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        padding: EdgeInsets.symmetric(
+            horizontal: SizeConfig.calWidthMultiplier(16),
+            vertical: SizeConfig.calHeightMultiplier(12)),
         elevation: 0,
         backgroundColor: btnPrimaryColor,
       ),
