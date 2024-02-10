@@ -174,7 +174,9 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             BtnPrimary(
               title: 'Continue',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed('/register-profile');
+              },
             )
           ],
         ),
