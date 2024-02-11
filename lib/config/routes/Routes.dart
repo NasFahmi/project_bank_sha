@@ -16,10 +16,10 @@ class Routes {
     switch (settings.name) {
       case routeInitial:
         return MaterialPageRoute(
-          // builder: (context) => SplashPage(),
+          builder: (context) => SplashPage(),
           // builder: (context) => RegisterProfilePage(),
           // builder: (context) => RegisterVerifyPage(),
-          builder: (context) => RegisterPinPage(),
+          // builder: (context) => RegisterPinPage(),
         );
       case routeOnboard:
         return MaterialPageRoute(
