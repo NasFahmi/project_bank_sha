@@ -19,6 +19,7 @@ class RegisterSuccessPage extends StatelessWidget {
             children: [
               Text(
                 'Akun Berhasil\nTerdaftar',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   color: tittleColorFont,
                   fontSize: SizeConfig.calMultiplierText(20),
@@ -30,11 +31,15 @@ class RegisterSuccessPage extends StatelessWidget {
               ),
               Text(
                 'Grow your finance start\ntogether with us',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   color: btnSecoundryColor,
                   fontSize: SizeConfig.calMultiplierText(16),
                   fontWeight: FontWeight.w600,
                 ),
+              ),
+              SizedBox(
+                height: SizeConfig.calHeightMultiplier(32),
               ),
               Container(
                 width: SizeConfig.calWidthMultiplier(200),
