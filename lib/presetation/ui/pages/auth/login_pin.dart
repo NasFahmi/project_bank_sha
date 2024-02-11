@@ -20,6 +20,32 @@ class _LoginPinPageState extends State<LoginPinPage> {
   TextEditingController pinFourController = TextEditingController();
   TextEditingController pinFiveController = TextEditingController();
   TextEditingController pinSixController = TextEditingController();
+  OutlineInputBorder enableOutlineInputBorder = const OutlineInputBorder(
+    borderSide: BorderSide(
+      width: 0,
+      color: Colors.transparent,
+    ),
+  );
+  OutlineInputBorder focusedOutlineInputBorder = const OutlineInputBorder(
+    borderSide: BorderSide(
+      width: 2,
+      color: btnPrimaryColor,
+    ),
+  );
+
+  OutlineInputBorder succesOutlineInputBorder = const OutlineInputBorder(
+    borderSide: BorderSide(
+      width: 2,
+      color: strokeTextFiledColorSucces,
+    ),
+  );
+
+  OutlineInputBorder errorOutlineInputBorder = const OutlineInputBorder(
+    borderSide: BorderSide(
+      width: 2,
+      color: strokeTextFieldColorError,
+    ),
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,6 +96,9 @@ class _LoginPinPageState extends State<LoginPinPage> {
       if (pinIndex > 0) {
         // Hanya hapus jika masih ada angka yang dimasukkan
         pinIndex--;
+        setState(() {
+          pinIndex = pinIndex;
+        });
         setPin(
             pinIndex + 1, ''); // Kosongkan nilai PIN di index yang akan dihapus
         currentPin[pinIndex] = ''; // Update currentPin list
@@ -84,7 +113,9 @@ class _LoginPinPageState extends State<LoginPinPage> {
         currentPin[pinIndex] =
             text; // Perbarui daftar currentPin //* currentPin[pinIndex] ini mengacu ke list dari currnetPin[pinindex yang bernilai 0] = text yang dikirimkan
         pinIndex++; // Pindahkan ke indeks berikutnya //* pinIndex bernilai tambah 1
-
+        setState(() {
+          pinIndex = pinIndex;
+        });
         if (pinIndex == 6) {
           //!jika sudah terisi semua
           // Jika semua digit dimasukkan
@@ -127,12 +158,42 @@ class _LoginPinPageState extends State<LoginPinPage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          PinCodeField(pinController: pinOneController),
-          PinCodeField(pinController: pinTwoController),
-          PinCodeField(pinController: pinThreeController),
-          PinCodeField(pinController: pinFourController),
-          PinCodeField(pinController: pinFiveController),
-          PinCodeField(pinController: pinSixController),
+          PinCodeField(
+            pinController: pinOneController,
+            outlineInputBorder: pinIndex == 0
+                ? enableOutlineInputBorder
+                : focusedOutlineInputBorder,
+          ),
+          PinCodeField(
+            pinController: pinTwoController,
+            outlineInputBorder: pinIndex == 1
+                ? enableOutlineInputBorder
+                : focusedOutlineInputBorder,
+          ),
+          PinCodeField(
+            pinController: pinThreeController,
+            outlineInputBorder: pinIndex == 2
+                ? enableOutlineInputBorder
+                : focusedOutlineInputBorder,
+          ),
+          PinCodeField(
+            pinController: pinFourController,
+            outlineInputBorder: pinIndex == 3
+                ? enableOutlineInputBorder
+                : focusedOutlineInputBorder,
+          ),
+          PinCodeField(
+            pinController: pinFiveController,
+            outlineInputBorder: pinIndex == 4
+                ? enableOutlineInputBorder
+                : focusedOutlineInputBorder,
+          ),
+          PinCodeField(
+            pinController: pinSixController,
+            outlineInputBorder: pinIndex == 5
+                ? enableOutlineInputBorder
+                : focusedOutlineInputBorder,
+          ),
         ],
       ),
     );

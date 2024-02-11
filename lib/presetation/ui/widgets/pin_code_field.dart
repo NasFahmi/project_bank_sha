@@ -4,7 +4,11 @@ import 'package:project_bank_sha/config/theme/theme.dart';
 
 class PinCodeField extends StatelessWidget {
   TextEditingController pinController = TextEditingController();
-  PinCodeField({super.key, required this.pinController});
+  OutlineInputBorder outlineInputBorder = OutlineInputBorder();
+  PinCodeField(
+      {super.key,
+      required this.pinController,
+      required this.outlineInputBorder});
 
   @override
   Widget build(BuildContext context) {
@@ -22,45 +26,39 @@ class PinCodeField extends StatelessWidget {
         textAlign: TextAlign.center, //! align text ketengah
         keyboardType: TextInputType.number,
         decoration: InputDecoration(
-          disabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              width: 0,
-              style: BorderStyle.none,
-              color: Colors.transparent,
-            ),
-          ),
+          disabledBorder: outlineInputBorder,
           contentPadding: EdgeInsets.all(SizeConfig.calWidthMultiplier(16)),
           filled: true,
           fillColor: Colors.white,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(
-              SizeConfig.calWidthMultiplier(8),
-            ),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius:
-                BorderRadius.circular(SizeConfig.calWidthMultiplier(8)),
-            borderSide: BorderSide(
-              width: 2,
-              color: Colors.white,
-            ),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius:
-                BorderRadius.circular(SizeConfig.calWidthMultiplier(8)),
-            borderSide: BorderSide(
-              width: 2,
-              color: strokeTextFiledColorFocused,
-            ),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderRadius:
-                BorderRadius.circular(SizeConfig.calWidthMultiplier(8)),
-            borderSide: BorderSide(
-              width: 2,
-              color: strokeTextFieldColorError,
-            ),
-          ),
+          // border: OutlineInputBorder(
+          //   borderRadius: BorderRadius.circular(
+          //     SizeConfig.calWidthMultiplier(8),
+          //   ),
+          // ),
+          // enabledBorder: OutlineInputBorder(
+          //   borderRadius:
+          //       BorderRadius.circular(SizeConfig.calWidthMultiplier(8)),
+          //   borderSide: BorderSide(
+          //     width: 2,
+          //     color: Colors.white,
+          //   ),
+          // ),
+          // focusedBorder: OutlineInputBorder(
+          //   borderRadius:
+          //       BorderRadius.circular(SizeConfig.calWidthMultiplier(8)),
+          //   borderSide: BorderSide(
+          //     width: 2,
+          //     color: strokeTextFiledColorFocused,
+          //   ),
+          // ),
+          // errorBorder: OutlineInputBorder(
+          //   borderRadius:
+          //       BorderRadius.circular(SizeConfig.calWidthMultiplier(8)),
+          //   borderSide: BorderSide(
+          //     width: 2,
+          //     color: strokeTextFieldColorError,
+          //   ),
+          // ),
         ),
       ),
     );

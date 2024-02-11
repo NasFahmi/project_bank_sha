@@ -14,4 +14,5 @@ const Color btnSecoundryColor = Color(0xff696B76);
 const Color strokeTextFieldColor = Color(0xffEFEEF1);
 const Color strokeTextFieldColorError = Color(0xffFF1E39);
 const Color strokeTextFiledColorFocused = Color(0xff3783FB);
+const Color strokeTextFiledColorSucces = Color.fromARGB(255, 55, 251, 55);
 const Color signInAuth = Color(0xff696B76);

@@ -22,6 +22,32 @@ class _RegisterPinPageState extends State<RegisterPinPage> {
   TextEditingController pinFourController = TextEditingController();
   TextEditingController pinFiveController = TextEditingController();
   TextEditingController pinSixController = TextEditingController();
+  OutlineInputBorder enableOutlineInputBorder = const OutlineInputBorder(
+    borderSide: BorderSide(
+      width: 0,
+      color: Colors.transparent,
+    ),
+  );
+  OutlineInputBorder focusedOutlineInputBorder = const OutlineInputBorder(
+    borderSide: BorderSide(
+      width: 2,
+      color: btnPrimaryColor,
+    ),
+  );
+
+  OutlineInputBorder succesOutlineInputBorder = const OutlineInputBorder(
+    borderSide: BorderSide(
+      width: 2,
+      color: strokeTextFiledColorSucces,
+    ),
+  );
+
+  OutlineInputBorder errorOutlineInputBorder = const OutlineInputBorder(
+    borderSide: BorderSide(
+      width: 2,
+      color: strokeTextFieldColorError,
+    ),
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,6 +107,9 @@ class _RegisterPinPageState extends State<RegisterPinPage> {
       if (pinIndex > 0) {
         // Hanya hapus jika masih ada angka yang dimasukkan
         pinIndex--;
+        setState(() {
+          pinIndex = pinIndex;
+        });
         setPin(
             pinIndex + 1, ''); // Kosongkan nilai PIN di index yang akan dihapus
         currentPin[pinIndex] = ''; // Update currentPin list
@@ -94,8 +123,14 @@ class _RegisterPinPageState extends State<RegisterPinPage> {
 
         currentPin[pinIndex] =
             text; // Perbarui daftar currentPin //* currentPin[pinIndex] ini mengacu ke list dari currnetPin[pinindex yang bernilai 0] = text yang dikirimkan
-        pinIndex++; // Pindahkan ke indeks berikutnya //* pinIndex bernilai tambah 1
-
+        pinIndex = pinIndex +
+            1; // Pindahkan ke indeks berikutnya //* pinIndex bernilai tambah 1
+        //! incremnet pinindex ke 1 ini hanya di incremnet blok fungsi ini, tidak mengupdate variabel diatas
+        //! maka untuk mengupdatenya bisa menggunakan setState() unutk sementara waktu yang nanti akan di ganti menggunakan state management
+        setState(() {
+          //! update state yang variabel diatas
+          pinIndex = pinIndex;
+        });
         if (pinIndex == 6) {
           //!jika sudah terisi semua
           // Jika semua digit dimasukkan
@@ -138,12 +173,42 @@ class _RegisterPinPageState extends State<RegisterPinPage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          PinCodeField(pinController: pinOneController),
-          PinCodeField(pinController: pinTwoController),
-          PinCodeField(pinController: pinThreeController),
-          PinCodeField(pinController: pinFourController),
-          PinCodeField(pinController: pinFiveController),
-          PinCodeField(pinController: pinSixController),
+          PinCodeField(
+            pinController: pinOneController,
+            outlineInputBorder: pinIndex == 0
+                ? focusedOutlineInputBorder
+                : enableOutlineInputBorder,
+          ),
+          PinCodeField(
+            pinController: pinTwoController,
+            outlineInputBorder: pinIndex == 1
+                ? focusedOutlineInputBorder
+                : enableOutlineInputBorder,
+          ),
+          PinCodeField(
+            pinController: pinThreeController,
+            outlineInputBorder: pinIndex == 2
+                ? focusedOutlineInputBorder
+                : enableOutlineInputBorder,
+          ),
+          PinCodeField(
+            pinController: pinFourController,
+            outlineInputBorder: pinIndex == 3
+                ? focusedOutlineInputBorder
+                : enableOutlineInputBorder,
+          ),
+          PinCodeField(
+            pinController: pinFiveController,
+            outlineInputBorder: pinIndex == 4
+                ? focusedOutlineInputBorder
+                : enableOutlineInputBorder,
+          ),
+          PinCodeField(
+            pinController: pinSixController,
+            outlineInputBorder: pinIndex == 5
+                ? focusedOutlineInputBorder
+                : enableOutlineInputBorder,
+          ),
         ],
       ),
     );
